@@ -5,32 +5,36 @@
 	<meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-		div { width: 300px; height: 175px; border: 3px solid #fff; border-radius: 25px; box-shadow: 5px 5px 5px #ccc; margin-bottom: 10px; }
-		#yellow { background-color: #ff0; }
-		#orange { background-color: #f60; }
-		#red { background-color: #f00; }
-		#black { background-color: #000; }
+		td img:hover { cursor: pointer; }
 	</style>
-
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
 		$(() => {
-			$('div').mouseover(function() {
-				const bgColor = $(this).css('backgroundColor');
-				$('body').css('backgroundColor', bgColor);
+			$('td img').click(function() {
+				const source = $(this).attr('src').replace('100x75', '400x300');
+				const altText = $(this).attr('alt');
+				$('div img').attr({'src': source, 'alt': altText});
 			});
-			$('div').mouseout(() => $('body').css('backgroundColor', 'white'));
 		});
 	</script>
-
 </head>
-<body>
 
-	<div id="yellow"></div>
-	<div id="orange"></div>
-	<div id="red"></div>
-	<div id="black"></div>
+<table>
+    <tbody>
+        <tr>
+            <td><img src="100x75/chrysanthemum.jpg" alt="Chrysanthemum" /></td>
+            <td><img src="100x75/desert.jpg" alt="Desert" /></td>
+            <td><img src="100x75/hydrangeas.jpg" alt="Hydrangeas" /></td>
+            <td><img src="100x75/jellyfish.jpg" alt="Jellyfish" /></td>
+            <td><img src="100x75/koala.jpg" alt="Koala" /></td>
+            <td><img src="100x75/lighthouse.jpg" alt="Lighthouse" /></td>
+            <td><img src="100x75/penguins.jpg" alt="Penguins" /></td>
+            <td><img src="100x75/tulips.jpg" alt="Tulips" /></td>
+        </tr>
+    </tbody>
+</table>
+<div><img src="#" alt="" /></div>
 
 </body>
 </html>
