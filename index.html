@@ -7,12 +7,20 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-	<script>
-		$(() => alert('Dzień dobry! Miłego dnia!'));
+    <script>
+		$(() => {
+			$('p').click(() => $('p').hide());
+			$('h1').click(() => $('p').show());
+		});
 	</script>
 
 </head>
 <body>
+
+	<h1>Nagłówek</h1>
+	<p>Akapit pierwszy</p>
+	<p>Akapit drugi</p>
+	<p>Akapit trzeci</p>
 
 </body>
 </html>
