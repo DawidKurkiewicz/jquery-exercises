@@ -9,32 +9,32 @@
 	</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <script>
+    <style>
+		input[type="button"] { font-size: large; }
+		div { width: 300px; height: 175px; border: 1px solid #ccc; margin-top: 20px; position: absolute; }
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<script>
 		$(() => {
-			$('td img').click(function() {
-				const source = $(this).attr('src').replace('100x75', '400x300');
-				const altText = $(this).attr('alt');
-				$('div img').attr({'src': source, 'alt': altText});
+			$('[type="button"]').click(function() {
+				const direction = $(this).val();
+				if (direction == 'W prawo') {
+					$('div').animate({left: '+=400'}, 3000);
+				} else if (direction == 'W lewo') {
+					$('div').animate({left: '-=400'}, 3000);
+				}
 			});
 		});
 	</script>
-</head>
 
-<table>
-    <tbody>
-        <tr>
-            <td><img src="100x75/chrysanthemum.jpg" alt="Chrysanthemum" /></td>
-            <td><img src="100x75/desert.jpg" alt="Desert" /></td>
-            <td><img src="100x75/hydrangeas.jpg" alt="Hydrangeas" /></td>
-            <td><img src="100x75/jellyfish.jpg" alt="Jellyfish" /></td>
-            <td><img src="100x75/koala.jpg" alt="Koala" /></td>
-            <td><img src="100x75/lighthouse.jpg" alt="Lighthouse" /></td>
-            <td><img src="100x75/penguins.jpg" alt="Penguins" /></td>
-            <td><img src="100x75/tulips.jpg" alt="Tulips" /></td>
-        </tr>
-    </tbody>
-</table>
-<div><img src="#" alt="" /></div>
+</head>
+<body>
+
+	<input type="button" value="W lewo" />
+	<input type="button" value="W prawo" />
+	<div></div>
 
 </body>
 </html>
