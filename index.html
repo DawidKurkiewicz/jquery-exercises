@@ -3,24 +3,34 @@
 <head>
 
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+		div { width: 300px; height: 175px; border: 3px solid #fff; border-radius: 25px; box-shadow: 5px 5px 5px #ccc; margin-bottom: 10px; }
+		#yellow { background-color: #ff0; }
+		#orange { background-color: #f60; }
+		#red { background-color: #f00; }
+		#black { background-color: #000; }
+	</style>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
 		$(() => {
-			$('p').click(() => $('p').hide());
-			$('h1').click(() => $('p').show());
+			$('div').mouseover(function() {
+				const bgColor = $(this).css('backgroundColor');
+				$('body').css('backgroundColor', bgColor);
+			});
+			$('div').mouseout(() => $('body').css('backgroundColor', 'white'));
 		});
 	</script>
 
 </head>
 <body>
 
-	<h1>Nagłówek</h1>
-	<p>Akapit pierwszy</p>
-	<p>Akapit drugi</p>
-	<p>Akapit trzeci</p>
+	<div id="yellow"></div>
+	<div id="orange"></div>
+	<div id="red"></div>
+	<div id="black"></div>
 
 </body>
 </html>
